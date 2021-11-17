@@ -9,6 +9,7 @@
     "Jon Cursi <jon.cursi@act-et.org>"
   ],
   "dependencies": {
+    "@actinc/eslint-config": "3.3.0",
     "@commitlint/cli": "15.0.0",
     "@commitlint/config-conventional": "15.0.0",
     "@typescript-eslint/eslint-plugin": "5.4.0",
@@ -41,7 +42,6 @@
   },
   "description": "Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
   "devDependencies": {
-    "@actinc/eslint-config": "3.3.0",
     "husky": "7.0.4",
     "jest": "27.3.1",
     "lint-staged": "12.0.2",

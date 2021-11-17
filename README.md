@@ -111,7 +111,7 @@ To configure [prettier](https://prettier.io/), create a `.prettierrc.js`
 file in the root of your project that contains the following:
 
 ```js
-module.exports = require('@nrccua/eslint-config/.prettierrc');
+module.exports = require('@encoura/eslint-config/.prettierrc');
 ```
 
 This will allow Prettier to discover the configuration this repository
@@ -132,6 +132,18 @@ your files for infractions every time you create a new commit:
 },
 ...
 ```
+
+## Configure Jest
+
+To configure [Jest](https://jestjs.io/), create a `jest.config.js`
+file in the root of your project that contains the following:
+
+```js
+module.exports = require('@encoura/eslint-config/jest.config');
+```
+
+This will allow Jest to discover the configuration this repository
+provides from within your `node_modules` folder.
 
 ## Configure TypeScript
 
