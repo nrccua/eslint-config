@@ -1,0 +1,92 @@
+{
+  "author": "Adam Weedeb <adam.weeden@encoura.org>",
+  "bugs": {
+    "email": "adam.weeden@encoura.org",
+    "url": "https://github.com/nrccua/eslint-config/issues"
+  },
+  "contributors": [
+    "Adam Weeden <adam.weeden@encoura.org>",
+    "Jon Cursi <jon.cursi@act-et.org>"
+  ],
+  "dependencies": {
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "@typescript-eslint/typescript-estree": "5.4.0",
+    "babel-jest": "27.3.1",
+    "enzyme": "3.11.0",
+    "enzyme-to-json": "3.6.2",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb": "19.0.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-disable": "2.0.3",
+    "eslint-plugin-filenames": "1.3.2",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jest": "25.2.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-lodash": "7.3.0",
+    "eslint-plugin-new-with-error": "2.0.0",
+    "eslint-plugin-no-loops": "0.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-promise": "5.1.1",
+    "eslint-plugin-react": "7.27.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-security": "1.4.0",
+    "markdownlint-cli": "0.29.0",
+    "prettier": "2.4.1",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.2"
+  },
+  "description": "Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
+  "devDependencies": {
+    "@actinc/eslint-config": "3.3.0",
+    "husky": "7.0.4",
+    "jest": "27.3.1",
+    "lint-staged": "12.0.2",
+    "np": "7.5.0",
+    "npm-run-all": "4.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "homepage": "https://github.com/nrccua/eslint-config#readme",
+  "keywords": [
+    "commitlint",
+    "eslint",
+    "eslint-config",
+    "markdownlint",
+    "prettier",
+    "typescript"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js}": "npm run test:lint:js",
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{md}": "npm run test:lint:md"
+  },
+  "main": "index.js",
+  "name": "@encoura/eslint-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nrccus/eslint-config.git"
+  },
+  "scripts": {
+    "release": "np",
+    "test": "npm-run-all test:**",
+    "test:lint:js": "eslint . --ext .js --fix --quiet",
+    "test:lint:md": "markdownlint README.md --config markdownlint.config.json",
+    "test:prettier": "prettier --write './**/*.js'"
+  },
+  "version": "1.0.0"
+}

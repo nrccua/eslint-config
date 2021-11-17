@@ -1,0 +1,12 @@
+{
+  "exclude": [
+    "**/__generated*.ts"
+  ],
+  "extends": "./node_modules/@actinc/eslint-config/tsconfig.json",
+  "ts-node": {
+    "transpileOnly": false,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
