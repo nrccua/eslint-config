@@ -38,6 +38,8 @@ const baseConfig = {
     'no-throw-literal': 'error',
     'no-useless-constructor': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/function-component-definition': 'off', // Allows const defined components
+    'react/no-invalid-html-attribute': 'off', // Allows rel values in link tags such as apple-touch-icon
   },
 };
 
