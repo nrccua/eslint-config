@@ -1,4 +1,5 @@
 module.exports = {
+  collectCoverage: true,
   coverageDirectory: '<rootDir>/build/reports/jest',
   coverageReporters: ['text', 'html', 'lcov'],
   coverageThreshold: {
