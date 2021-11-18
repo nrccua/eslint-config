@@ -9,7 +9,7 @@ Install this package, [husky](https://github.com/typicode/husky), and
 [lint-staged](https://github.com/okonet/lint-staged) as dev dependencies:
 
 ```shell
-npm install --save-dev git+ssh://git@github.com/nrccua/eslint-config.git husky lint-staged
+npm install --save-dev git+https://github.com/nrccua/eslint-config.git husky lint-staged
 ```
 
 Configure husky by adding the following to your `package.json` file:
@@ -31,7 +31,7 @@ To configure [CommitLint](https://github.com/marionebl/commitlint), create a
 following:
 
 ```js
-module.exports = require('nrccua/eslint-config/commitlint.config');
+module.exports = require('@encoura/eslint-config/commitlint.config');
 ```
 
 This will allow CommitLint to discover the configuration this repository
@@ -67,17 +67,18 @@ repository provides from within your `node_modules` folder, and will check
 your `*.js`, `*.ts`, and `*.tsx` files for infractions every time you create a
 new commit:
 
+To configure [prettier](https://prettier.io/), create a `.prettierrc.js`
+file in the root of your project that contains the following:
+
+```js
+module.exports = {
+  extends: ['@encoura/eslint-config']
+  ...
+  // Add any custom rules/plugins/configuration here
+}
+```
+
 ```json
-...
-"eslintConfig": {
-  ...
-  "extends": [
-    ...
-    "nrccua/eslint-config",
-    ...
-  ],
-  ...
-},
 ...
 "lint-staged": {
   ...
@@ -99,7 +100,7 @@ a new commit:
 ...
 "lint-staged": {
   ...
-  "*.{md}": "markdownlint --config node_modules/nrccua/eslint-config/markdownlint.config.json",
+  "*.{md}": "markdownlint --config node_modules/@encoura/eslint-config/markdownlint.config.json",
   ...
 },
 ...
@@ -139,7 +140,12 @@ To configure [Jest](https://jestjs.io/), create a `jest.config.js`
 file in the root of your project that contains the following:
 
 ```js
-module.exports = require('@encoura/eslint-config/jest.config');
+const defaultConfig = require('@encoura/eslint-config/jest.config');
+
+module.export = {
+  ...defaultConfig,
+  // Extra project specific jest config here...
+} 
 ```
 
 This will allow Jest to discover the configuration this repository
@@ -153,7 +159,7 @@ configuration this repository provides from within your `node_modules` folder:
 
 ```json
 ...
-"extends": "node_modules/nrccua/eslint-config/tsconfig.json",
+"extends": "node_modules/@encoura/eslint-config/tsconfig.json",
 ...
 ```
 
