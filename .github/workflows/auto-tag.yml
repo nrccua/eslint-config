@@ -18,7 +18,10 @@ jobs:
         with:
           persist-credentials: true
           fetch-depth: 0
-      - uses: fregante/setup-git-user@v1
+      - name: Set Git User
+        run: |
+          git config --add user.name "Adam Weeden (Automation)"
+          git config --add user.email "adam.weeden@encoura.org"
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
@@ -48,8 +51,6 @@ jobs:
           automatic_release_tag: ${{ env.PACKAGE_VERSION }}
           prerelease: false
           title: v${{ env.PACKAGE_VERSION }}
-      - name: Who Am I?
-        run: git config --get user.name && git config --get user.email
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
