@@ -16,10 +16,10 @@ Configure husky by adding the following to your `package.json` file:
 
 ```json
 ...
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
+"scripts": {
+  ...
+  "prepare": "husky install",
+  ...
 },
 ...
 ```
@@ -36,22 +36,6 @@ module.exports = require('@encoura/eslint-config/commitlint.config');
 
 This will allow CommitLint to discover the configuration this repository
 provides from within your `node_modules` folder.
-
-Next, add the following to your `package.json` file so that CommitLint will
-check for infractions in your commit messages every time you create a new
-commit:
-
-```json
-...
-"husky": {
-  "hooks": {
-    ...
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    ...
-  }
-},
-...
-```
 
 By default the Encoura commitlint expects a commit message in the following format:
 

@@ -20,3 +20,8 @@ Chronological history of changes to the ESLint config.
 
 * Fixed some README issues thanks to @partiga-daitan
 * Add `collectCoverage: true` to jest.config.js
+
+## [v1.0.4] - November 19, 2021
+
+* Update README with better husky install info
+
