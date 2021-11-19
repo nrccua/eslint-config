@@ -50,12 +50,11 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: ${{ env.PACKAGE_VERSION }}
           prerelease: false
-          title: v${{ env.PACKAGE_VERSION }}
+          title: ${{ env.PACKAGE_VERSION }}
       - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.RELEASE_TOKEN }}
-          branch: ${{ github.ref }}
+        run: |
+          git remote set-url origin https://${{ secrets.RELEASE_TOKEN}}@github.com/${{ env.GITHUB_REPOSITORY }}.git /dev/null 2>&1
+          git push origin ${{ github.ref }}
       - name: Slack Notify
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
