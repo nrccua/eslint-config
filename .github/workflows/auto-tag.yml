@@ -52,8 +52,10 @@ jobs:
           prerelease: false
           title: ${{ env.PACKAGE_VERSION }}
       - name: Push changes
+        env:
+          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
-          git remote set-url origin https://${{ secrets.RELEASE_TOKEN}}@github.com/${{ env.GITHUB_REPOSITORY }}.git > /dev/null 2>&1
+          git remote set-url origin https://$RELEASE_TOKEN@github.com/$GITHUB_REPOSITORY.git > /dev/null 2>&1
           git push origin ${{ github.ref }}
       - name: Slack Notify
         uses: rtCamp/action-slack-notify@v2.2.0
