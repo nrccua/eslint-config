@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          persist-credentials: false
+          persist-credentials: true
           fetch-depth: 0
       - uses: fregante/setup-git-user@v1
       - uses: actions/setup-node@v1
@@ -48,6 +48,8 @@ jobs:
           automatic_release_tag: ${{ env.PACKAGE_VERSION }}
           prerelease: false
           title: v${{ env.PACKAGE_VERSION }}
+      - name: Who Am I?
+        run: git config --get user.name && git config --get user.email
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
