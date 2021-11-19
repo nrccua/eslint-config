@@ -28,11 +28,11 @@
     "eslint-plugin-jest": "25.2.4",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-lodash": "7.3.0",
-    "eslint-plugin-new-with-error": "2.0.0",
+    "eslint-plugin-new-with-error": "3.1.0",
     "eslint-plugin-no-loops": "0.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-promise": "5.1.1",
-    "eslint-plugin-react": "7.27.0",
+    "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-security": "1.4.0",
     "markdownlint-cli": "0.29.0",
@@ -44,8 +44,8 @@
   "devDependencies": {
     "husky": "7.0.4",
     "jest": "27.3.1",
-    "lint-staged": "12.0.2",
-    "np": "7.5.0",
+    "lint-staged": "12.0.3",
+    "np": "7.6.0",
     "npm-run-all": "4.1.5",
     "standard-version": "9.3.2"
   },
@@ -83,11 +83,13 @@
     "url": "git+ssh://git@github.com/nrccus/eslint-config.git"
   },
   "scripts": {
+    "prepare": "git config --local push.followTags true",
     "release": "np",
     "test": "npm-run-all test:**",
     "test:lint:js": "eslint . --ext .js --fix --quiet",
     "test:lint:md": "markdownlint README.md --config markdownlint.config.json",
     "test:prettier": "prettier --write './**/*.js'",
+    "update:dependencies": "npm outdated --long | grep -v devDependencies | awk '{print $1}' | tail -n +2 | xargs -I {} npm i -E {}@latest && npm outdated --long | grep devDependencies | awk '{print $1}' | xargs -I {} npm i -E -D {}@latest",
     "update:version": "standard-version"
   },
   "version": "1.0.5"
