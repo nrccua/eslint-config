@@ -48,7 +48,7 @@ jobs:
           automatic_release_tag: v${{ env.PACKAGE_VERSION }}
           prerelease: false
           title: ${{ env.PACKAGE_VERSION }}
-          files: "*"
+      - run: git push origin ${{ github.ref }}
       - name: Slack Notify
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
