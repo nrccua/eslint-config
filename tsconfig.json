@@ -1,4 +1,6 @@
 {
+  // When editing this repo, this line will be flagged by TS
+  // However for downstream users this IS the correct path
   "extends": "../../@actinc/eslint-config/tsconfig.json",
   "ts-node": {
     "transpileOnly": false,

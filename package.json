@@ -46,7 +46,8 @@
     "jest": "27.3.1",
     "lint-staged": "12.0.2",
     "np": "7.5.0",
-    "npm-run-all": "4.1.5"
+    "npm-run-all": "4.1.5",
+    "standard-version": "9.3.2"
   },
   "husky": {
     "hooks": {
@@ -86,7 +87,8 @@
     "test": "npm-run-all test:**",
     "test:lint:js": "eslint . --ext .js --fix --quiet",
     "test:lint:md": "markdownlint README.md --config markdownlint.config.json",
-    "test:prettier": "prettier --write './**/*.js'"
+    "test:prettier": "prettier --write './**/*.js'",
+    "update:version": "standard-version"
   },
   "version": "1.0.4"
 }

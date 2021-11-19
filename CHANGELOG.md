@@ -1,27 +1,22 @@
-# Changelog
+### 1.0.4 - (2021-11-19)
 
-Chronological history of changes to the ESLint config.
+* Update README with better husky install info
 
-## [v1.0.0] - November 17, 2021
+### 1.0.3 - (2021-11-18)
 
-* Initial release
+* Fixed some README issues thanks to @partiga-daitan
+* Add `collectCoverage: true` to jest.config.js
 
-## [v1.0.1] - November 17, 2021
+### 1.0.2 - (2021-11-18)
+
+* Added some common react rules
+
+### 1.0.1 - (2021-11-17)
 
 * Added Jest docs to README and fixed other doc ref
 * Made @actinc/eslint-config a full dependency so its tsconfig.json can be referenced
 * Fixed tsconfig extends path for downstream users
 
-## [v1.0.2] - November 18, 2021
+### 1.0.0 - (2021-11-17)
 
-* Added some common react rules
-
-## [v1.0.3] - November 18, 2021
-
-* Fixed some README issues thanks to @partiga-daitan
-* Add `collectCoverage: true` to jest.config.js
-
-## [v1.0.4] - November 19, 2021
-
-* Update README with better husky install info
-
+* Initial release
