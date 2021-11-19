@@ -87,7 +87,8 @@
     "test": "npm-run-all test:**",
     "test:lint:js": "eslint . --ext .js --fix --quiet",
     "test:lint:md": "markdownlint README.md --config markdownlint.config.json",
-    "test:prettier": "prettier --write './**/*.js'"
+    "test:prettier": "prettier --write './**/*.js'",
+    "update:version": "standard-version"
   },
   "version": "1.0.4"
 }
