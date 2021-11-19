@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 1.0.5 (2021-11-19)
 
+* Add support for standard-version to update package.json and this changelog.
+
 ### 1.0.4 - (2021-11-19)
 
 * Update README with better husky install info
