@@ -1,0 +1,55 @@
+name: Tag On Merge
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  tag:
+    name: Add tag
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["14"]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: fregante/setup-git-user@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ~/.npm
+            **/node_modules
+          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-test-${{ env.cache-name }}-
+            ${{ runner.os }}-test-
+            ${{ runner.os }}-
+      - run: npm i
+      - run: npm run test
+      - run: npm run update:version
+      - name: Install JQ JSON Parser
+        run: sudo apt update && sudo apt install jq -y
+      - name: Extract version
+        run: echo "PACKAGE_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+      - uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: v${{ env.PACKAGE_VERSION }}
+          prerelease: false
+          title: ${{ env.PACKAGE_VERSION }}
+          files: "*"
+      - name: Slack Notify
+        uses: rtCamp/action-slack-notify@v2.2.0
+        env:
+          SLACK_WEBHOOK: https://hooks.slack.com/services/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
