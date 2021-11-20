@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/nrccus/eslint-config/compare/1.0.5...1.0.6) (2021-11-20)
+
+
+### Changes
+
+* [E4E-29]: Added rules around interface preference and naming ([cdb5e7f](https://github.com/nrccus/eslint-config/commit/cdb5e7f7addbcb8f1b5bc5b0c355232dca84d8a0))
+
 ### [1.0.5](https://github.com/nrccus/eslint-config/compare/1.0.4...1.0.5) (2021-11-19)
 
 
