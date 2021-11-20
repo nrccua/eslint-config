@@ -59,7 +59,20 @@ const tsConfig = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     ...baseConfig.rules,
+    '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     '@typescript-eslint/member-delimiter-style': 'error',
+    // Emulate deprecated interface-name-prefix rule
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true,
+        }
+      }
+    ],
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
