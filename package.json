@@ -121,5 +121,5 @@
     "update:dependencies": "npm outdated --long | grep -v devDependencies | awk '{print $1}' | tail -n +2 | xargs -I {} npm i -E {}@latest && npm outdated --long | grep devDependencies | awk '{print $1}' | xargs -I {} npm i -E -D {}@latest",
     "update:version": "standard-version"
   },
-  "version": "1.0.6"
+  "version": "1.0.7"
 }
