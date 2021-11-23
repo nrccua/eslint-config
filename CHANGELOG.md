@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/nrccus/eslint-config/compare/1.0.6...1.0.7) (2021-11-23)
+
+
+### Changes
+
+* Added peerDependencies for downstream ([3d5054c](https://github.com/nrccus/eslint-config/commit/3d5054c1a343220bff42b062daf39c470a024f5a))
+* Merge pull request #15 from nrccua/E4E-29 ([7005333](https://github.com/nrccus/eslint-config/commit/7005333744bfba086a31cf441c27aa3b75496687)), closes [#15](https://github.com/nrccus/eslint-config/issues/15)
+* [E4E-29]: 1.0.6 bump ([db6477f](https://github.com/nrccus/eslint-config/commit/db6477fe1ae63ad52f3847f3740fb65b075d25fd))
+
 ### [1.0.6](https://github.com/nrccus/eslint-config/compare/1.0.5...1.0.6) (2021-11-20)
 
 
