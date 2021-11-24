@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nrccus/eslint-config/compare/1.0.7...1.1.0) (2021-11-24)
+
+
+### Changes
+
+* [E4E-29]: Update pacckages to latest ([7e0d661](https://github.com/nrccus/eslint-config/commit/7e0d661a3a4ff8535ef9b3d9f6aff8a11b9c1ab8))
+* 1.0.7 ([106985f](https://github.com/nrccus/eslint-config/commit/106985f4f18806bed665a7917602c01087e3b20b))
+
 ### [1.0.7](https://github.com/nrccus/eslint-config/compare/1.0.6...1.0.7) (2021-11-23)
 
 
