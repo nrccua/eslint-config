@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/nrccus/eslint-config/compare/1.1.0...1.1.1) (2021-12-08)
+
+
+### Changes
+
+* [E4E-58]: Remove enzyme in favor of react-testing-library ([f767320](https://github.com/nrccus/eslint-config/commit/f7673201894b88730db2ce6689094c9a199cae7b))
+* Merge pull request #17 from nrccua/E4E-29 ([1f2df8e](https://github.com/nrccus/eslint-config/commit/1f2df8e25a0fea99c441324db5bee0ab6e1d3f67)), closes [#17](https://github.com/nrccus/eslint-config/issues/17)
+* [E4E-29]: 1.1.0 ([f7684c1](https://github.com/nrccus/eslint-config/commit/f7684c10607caeb23dc9a6accffaa0aba4444f12))
+* Merge pull request #16 from nrccua/E4E-29 ([ddb44a6](https://github.com/nrccus/eslint-config/commit/ddb44a6a9984569e0f8130e86902d13c8a2e6daa)), closes [#16](https://github.com/nrccus/eslint-config/issues/16)
+* [E4E-29]: You'd think I could spell my own name ([4646530](https://github.com/nrccus/eslint-config/commit/46465302bd6a8ad84c7f3046d00311935fb996b7))
+
 ## [1.1.0](https://github.com/nrccus/eslint-config/compare/1.0.7...1.1.0) (2021-11-24)
 
 
