@@ -112,7 +112,7 @@
     "url": "git+ssh://git@github.com/nrccus/eslint-config.git"
   },
   "scripts": {
-    "prepare": "git config --local push.followTags true",
+    "prepare": "[ -f \".git\" ] && git config --local push.followTags true || true # Otherwise this fails for downstream users",
     "release": "np",
     "test": "npm-run-all test:**",
     "test:lint:js": "eslint . --ext .js --fix --quiet",
