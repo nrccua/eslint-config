@@ -10,7 +10,6 @@ module.exports = {
       statements: 80,
     },
   },
-  snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.tsx?$': 'babel-jest',
