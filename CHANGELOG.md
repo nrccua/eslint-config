@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/nrccus/eslint-config/compare/1.1.1...1.1.2) (2021-12-08)
+
+
+### Changes
+
+* [E4E-0]: Fix issue with downstream packages trying to do git config --local ([c033af6](https://github.com/nrccus/eslint-config/commit/c033af6c35c0abbe94dc70f8e194dfa766e57ab0))
+* [E4E-58]: 1.1.1 ([3730934](https://github.com/nrccus/eslint-config/commit/373093445957e51b1a8c790ad5178725e006cb5a))
+
 ### [1.1.1](https://github.com/nrccus/eslint-config/compare/1.1.0...1.1.1) (2021-12-08)
 
 
