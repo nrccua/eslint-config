@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Changes
 
+* [E4E-0]: Fix some bad code/formatting ([153c536](https://github.com/nrccus/eslint-config/commit/153c53626ed03299c35167906ea863e814fc1910))
+* [E4E-0]: 1.2.0 ([19895af](https://github.com/nrccus/eslint-config/commit/19895afeb694bfebeb2f6247991ac647ca29aa92))
 * [E4E-0]: Make 120 default width except for tsx/jsx ([e32d9d1](https://github.com/nrccus/eslint-config/commit/e32d9d1a9f63346d2c10b6036dd0cb2c17f1fc45))
 * [E4E-0]: Add a config for NestJS ([37d5898](https://github.com/nrccus/eslint-config/commit/37d5898a17baa5e0f5f1f41090e21dd9ffc22649))
 * Merge pull request #19 from nrccua/fix/remove_enzyme ([ccb93af](https://github.com/nrccus/eslint-config/commit/ccb93af750a58eba6b9faabf891625042852b916)), closes [#19](https://github.com/nrccus/eslint-config/issues/19)
