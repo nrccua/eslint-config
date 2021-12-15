@@ -11,7 +11,7 @@ config.insertPragma = false;
 config.requirePragma = false;
 config.overrides = [
   {
-    files: ["*.jsx", "*.tsx"],
+    files: ['*.jsx', '*.tsx'],
     options: {
       printWidth: 160,
     },

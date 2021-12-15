@@ -9,9 +9,9 @@ const prettierConfig = require('./.prettierrc');
 
 const overridePrintWidth =
   prettierConfig && prettierConfig.overrides && prettierConfig.overrides.length > 0
-    ? Math.max(prettierConfig.overrides.map(o => o.printWidth))
+    ? Math.max(...prettierConfig.overrides.map(o => o.options.printWidth))
     : 0;
-const printWidth = Math.max([prettierConfig.printWidth || 160, overridePrintWidth]);
+const printWidth = Math.max(prettierConfig.printWidth, overridePrintWidth);
 
 const baseConfig = {
   extends: [
