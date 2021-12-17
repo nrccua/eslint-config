@@ -6,8 +6,16 @@ const config = { ...defaultConfig };
 if (typeof config.jsxBracketSameLine !== 'undefined') {
   delete config.jsxBracketSameLine;
 }
-config.printWidth = 160;
+config.printWidth = 120;
 config.insertPragma = false;
 config.requirePragma = false;
+config.overrides = [
+  {
+    files: ['*.jsx', '*.tsx'],
+    options: {
+      printWidth: 160,
+    },
+  },
+];
 
 module.exports = config;

@@ -7,6 +7,12 @@
 
 const prettierConfig = require('./.prettierrc');
 
+const overridePrintWidth =
+  prettierConfig && prettierConfig.overrides && prettierConfig.overrides.length > 0
+    ? Math.max(...prettierConfig.overrides.map(o => o.options.printWidth))
+    : 0;
+const printWidth = Math.max(prettierConfig.printWidth, overridePrintWidth);
+
 const baseConfig = {
   extends: [
     'airbnb',
@@ -24,12 +30,14 @@ const baseConfig = {
   ignorePatterns: ['node_modules/**'],
   plugins: ['prettier'],
   rules: {
+    'filenames/match-exported': ['warn', [null, 'pascal', 'camel']],
     'import/extensions': ['error', 'never'],
+    'lodash/prefer-lodash-method': 'off',
     'lodash/preferred-alias': 'off',
     'max-len': [
       'error',
       {
-        code: prettierConfig.printWidth,
+        code: printWidth,
       },
     ],
     'no-console': 'error',
@@ -38,6 +46,7 @@ const baseConfig = {
     'no-throw-literal': 'error',
     'no-useless-constructor': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-no-useless-fragment': 'warn',
     'react/function-component-definition': 'off', // Allows const defined components
     'react/no-invalid-html-attribute': 'off', // Allows rel values in link tags such as apple-touch-icon
   },
@@ -114,4 +123,15 @@ const tsConfig = {
   },
 };
 
-module.exports = { ...baseConfig, overrides: [tsConfig] };
+const testsConfig = {
+  ...tsConfig,
+  files: ['test/**', '*.test.ts', '*.spec.ts'],
+  plugins: ['jest'],
+  rules: {
+    ...tsConfig.rules,
+    '@typescript-eslint/unbound-method': 'off',
+    'jest/unbound-method': 'error',
+  },
+};
+
+module.exports = { ...baseConfig, overrides: [tsConfig, testsConfig] };

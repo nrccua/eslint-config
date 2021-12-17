@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/nrccus/eslint-config/compare/1.2.0...1.2.1) (2021-12-17)
+
+
+### Changes
+
+* [E4E-0]: Allow test files to avoid unbound-method errors ([631c61b](https://github.com/nrccus/eslint-config/commit/631c61b2eb958863885d2dce68f23d5b17ec3d12))
+* [E4E-0]: 1.2.0 ([e92d2e8](https://github.com/nrccus/eslint-config/commit/e92d2e88c2338bcabadcbbd3a10662ddf9aec3ee))
+
+## [1.2.0](https://github.com/nrccus/eslint-config/compare/1.1.2...1.2.0) (2021-12-15)
+
+
+### Changes
+
+* [E4E-0]: Fix some bad code/formatting ([153c536](https://github.com/nrccus/eslint-config/commit/153c53626ed03299c35167906ea863e814fc1910))
+* [E4E-0]: 1.2.0 ([19895af](https://github.com/nrccus/eslint-config/commit/19895afeb694bfebeb2f6247991ac647ca29aa92))
+* [E4E-0]: Make 120 default width except for tsx/jsx ([e32d9d1](https://github.com/nrccus/eslint-config/commit/e32d9d1a9f63346d2c10b6036dd0cb2c17f1fc45))
+* [E4E-0]: Add a config for NestJS ([37d5898](https://github.com/nrccus/eslint-config/commit/37d5898a17baa5e0f5f1f41090e21dd9ffc22649))
+* Merge pull request #19 from nrccua/fix/remove_enzyme ([ccb93af](https://github.com/nrccus/eslint-config/commit/ccb93af750a58eba6b9faabf891625042852b916)), closes [#19](https://github.com/nrccus/eslint-config/issues/19)
+* [E4E-0]: 1.1.2 ([fbbf163](https://github.com/nrccus/eslint-config/commit/fbbf163f434032d818ba812cab0b4c83046c81ec))
+* Merge pull request #18 from nrccua/fix/remove_enzyme ([ad18089](https://github.com/nrccus/eslint-config/commit/ad18089b652e44d91eea3bbc9e380d8fb688d219)), closes [#18](https://github.com/nrccus/eslint-config/issues/18)
+
 ### [1.1.2](https://github.com/nrccus/eslint-config/compare/1.1.1...1.1.2) (2021-12-08)
 
 

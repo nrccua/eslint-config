@@ -119,7 +119,9 @@
     "test:lint:md": "markdownlint README.md --config markdownlint.config.json",
     "test:prettier": "prettier --write './**/*.js'",
     "update:dependencies": "npm outdated --long | grep -v devDependencies | awk '{print $1}' | tail -n +2 | xargs -I {} npm i -E {}@latest && npm outdated --long | grep devDependencies | awk '{print $1}' | xargs -I {} npm i -E -D {}@latest",
-    "update:version": "standard-version"
+    "update:version": "standard-version",
+    "update:version:major": "standard-version --release-as major",
+    "update:version:minor": "standard-version --release-as minor"
   },
-  "version": "1.1.2"
+  "version": "1.2.1"
 }
