@@ -4,27 +4,57 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+const lodash = require('lodash');
 
 const defaultConfig = require('./index');
 
-const tsConfig = defaultConfig.overrides.filter(o => o.files === ['**/*.ts', '**/*.tsx'])[0];
+const tsConfig = lodash.first(defaultConfig.overrides.filter(o => o.files && o.files.includes('**/*.ts'))) || {
+  rules: {},
+};
 
-const moduleConfig = {
+const nestConfig = {
   ...tsConfig,
-  files: ['**/*.module.ts'],
   rules: {
     ...tsConfig.rules,
-    '@typescript-eslint/no-extraneous-class': 'off',
+    'filenames/match-exported': 'off',
   },
 };
 
+const controllerConfig = {
+  ...nestConfig,
+  files: ['**/*.controller.ts'],
+};
+
 const entityConfig = {
-  ...tsConfig,
+  ...nestConfig,
   files: ['**/*.entity.ts'],
   rules: {
-    ...tsConfig.rules,
+    ...nestConfig.rules,
     camel_case: 'off',
   },
 };
 
-module.exports = { ...defaultConfig, overrides: [...defaultConfig.overrides, moduleConfig, entityConfig] };
+const moduleConfig = {
+  ...nestConfig,
+  files: ['**/*.module.ts'],
+  rules: {
+    ...nestConfig.rules,
+    '@typescript-eslint/no-extraneous-class': 'off',
+  },
+};
+
+const serviceConfig = {
+  ...nestConfig,
+  files: ['**/*.service.ts'],
+  rules: {
+    ...nestConfig.rules,
+    'filenames/match-exported': 'off',
+  },
+};
+
+console.log([...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, nestConfig, serviceConfig]);
+
+module.exports = {
+  ...defaultConfig,
+  overrides: [...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, serviceConfig],
+};
