@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/nrccus/eslint-config/compare/1.2.1...1.2.2) (2021-12-17)
+
+
+### Changes
+
+* [E4E-0]: Fix .nesteslintrc.js ([375fa0a](https://github.com/nrccus/eslint-config/commit/375fa0ab7c656ee0fa7907f68983e0327782f751))
+* [E4E-0]: 1.2.1 ([8487afb](https://github.com/nrccus/eslint-config/commit/8487afb19fc7ac49685a3ff03f7e8e4998bf5907))
+
 ### [1.2.1](https://github.com/nrccus/eslint-config/compare/1.2.0...1.2.1) (2021-12-17)
 
 
