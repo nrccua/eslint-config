@@ -52,8 +52,6 @@ const serviceConfig = {
   },
 };
 
-console.log([...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, nestConfig, serviceConfig]);
-
 module.exports = {
   ...defaultConfig,
   overrides: [...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, serviceConfig],
