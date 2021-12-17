@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/nrccus/eslint-config/compare/1.2.2...1.2.3) (2021-12-17)
+
+
+### Changes
+
+* [E4E-0]: Remove console.log ([e411481](https://github.com/nrccus/eslint-config/commit/e411481cd7527f73477fb4db714eedf8b3639262))
+* [E4E-0]: 1.2.2 (for real this time) ([b5c22a4](https://github.com/nrccus/eslint-config/commit/b5c22a43be1b1e8310c7a21f389cb2704a1547eb))
+
 ### [1.2.2](https://github.com/nrccus/eslint-config/compare/1.2.1...1.2.2) (2021-12-17)
 
 
