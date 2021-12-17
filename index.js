@@ -123,4 +123,15 @@ const tsConfig = {
   },
 };
 
-module.exports = { ...baseConfig, overrides: [tsConfig] };
+const testsConfig = {
+  ...tsConfig,
+  files: ['test/**', '*.test.ts', '*.spec.ts'],
+  plugins: ['jest'],
+  rules: {
+    ...tsConfig.rules,
+    '@typescript-eslint/unbound-method': 'off',
+    'jest/unbound-method': 'error',
+  },
+};
+
+module.exports = { ...baseConfig, overrides: [tsConfig, testsConfig] };
