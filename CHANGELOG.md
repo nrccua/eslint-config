@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Changes
 
+* [E4E-0]: Forgot to run prettier ([3e6279c](https://github.com/nrccus/eslint-config/commit/3e6279cd041fb41e539365d49e5aca351f7af802))
+* [E4E-0]: 1.2.2 ([2e404e7](https://github.com/nrccus/eslint-config/commit/2e404e786ff1a334e0723272ae16e6bde35a8c61))
 * [E4E-0]: Fix .nesteslintrc.js ([375fa0a](https://github.com/nrccus/eslint-config/commit/375fa0ab7c656ee0fa7907f68983e0327782f751))
 * [E4E-0]: 1.2.1 ([8487afb](https://github.com/nrccus/eslint-config/commit/8487afb19fc7ac49685a3ff03f7e8e4998bf5907))
 
