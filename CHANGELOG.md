@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/nrccus/eslint-config/compare/1.2.0...1.2.1) (2021-12-17)
+
+
+### Changes
+
+* [E4E-0]: Allow test files to avoid unbound-method errors ([631c61b](https://github.com/nrccus/eslint-config/commit/631c61b2eb958863885d2dce68f23d5b17ec3d12))
+* [E4E-0]: 1.2.0 ([e92d2e8](https://github.com/nrccus/eslint-config/commit/e92d2e88c2338bcabadcbbd3a10662ddf9aec3ee))
+
 ## [1.2.0](https://github.com/nrccus/eslint-config/compare/1.1.2...1.2.0) (2021-12-15)
 
 
