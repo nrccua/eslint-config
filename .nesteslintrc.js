@@ -8,14 +8,16 @@ const lodash = require('lodash');
 
 const defaultConfig = require('./index');
 
-const tsConfig = lodash.first(defaultConfig.overrides.filter(o => (o.files && o.files.includes('**/*.ts')))) || { rules: {} };
+const tsConfig = lodash.first(defaultConfig.overrides.filter(o => o.files && o.files.includes('**/*.ts'))) || {
+  rules: {},
+};
 
 const nestConfig = {
   ...tsConfig,
   rules: {
     ...tsConfig.rules,
     'filenames/match-exported': 'off',
-  }
+  },
 };
 
 const controllerConfig = {
@@ -52,4 +54,7 @@ const serviceConfig = {
 
 console.log([...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, nestConfig, serviceConfig]);
 
-module.exports = { ...defaultConfig, overrides: [...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, serviceConfig] };
+module.exports = {
+  ...defaultConfig,
+  overrides: [...defaultConfig.overrides, controllerConfig, entityConfig, moduleConfig, serviceConfig],
+};
