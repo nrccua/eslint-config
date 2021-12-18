@@ -12,42 +12,36 @@ const tsConfig = lodash.first(defaultConfig.overrides.filter(o => o.files && o.f
   rules: {},
 };
 
-const nestConfig = {
-  ...tsConfig,
-  rules: {
-    ...tsConfig.rules,
-    'filenames/match-exported': 'off',
-  },
-};
+tsConfig.rules['filenames/match-exported'] = 'off';
 
 const controllerConfig = {
-  ...nestConfig,
+  ...tsConfig,
   files: ['**/*.controller.ts'],
 };
 
 const entityConfig = {
-  ...nestConfig,
+  ...tsConfig,
   files: ['**/*.entity.ts'],
   rules: {
-    ...nestConfig.rules,
+    ...tsConfig.rules,
     camel_case: 'off',
   },
 };
 
 const moduleConfig = {
-  ...nestConfig,
+  ...tsConfig,
   files: ['**/*.module.ts'],
   rules: {
-    ...nestConfig.rules,
+    ...tsConfig.rules,
     '@typescript-eslint/no-extraneous-class': 'off',
   },
 };
 
 const serviceConfig = {
-  ...nestConfig,
+  ...tsConfig,
   files: ['**/*.service.ts'],
   rules: {
-    ...nestConfig.rules,
+    ...tsConfig.rules,
     'filenames/match-exported': 'off',
   },
 };
