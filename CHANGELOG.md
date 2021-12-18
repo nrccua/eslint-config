@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/nrccus/eslint-config/compare/1.2.3...1.2.4) (2021-12-18)
+
+
+### Changes
+
+* [E4E-0]: Inject filenames/match-exported override directly into the nest tsConfig ([c9a8465](https://github.com/nrccus/eslint-config/commit/c9a8465b511c65ce615a7d99d7fc66e7b46e1825))
+* [E4E-0]: 1.2.3 ([5485a47](https://github.com/nrccus/eslint-config/commit/5485a472d1315bbfb98ac9f3e911c88d0f733bc6))
+
 ### [1.2.3](https://github.com/nrccus/eslint-config/compare/1.2.2...1.2.3) (2021-12-17)
 
 
