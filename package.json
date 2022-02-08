@@ -9,7 +9,7 @@
     "Jon Cursi <jon.cursi@act-et.org>"
   ],
   "dependencies": {
-    "@actinc/eslint-config": "3.4.0",
+    "@actinc/eslint-config": "3.4.1",
     "@commitlint/cli": "15.0.0",
     "@commitlint/config-conventional": "15.0.0",
     "@testing-library/jest-dom": "^5.16.1",
@@ -31,11 +31,11 @@
     "eslint-plugin-new-with-error": "3.1.0",
     "eslint-plugin-no-loops": "0.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-promise": "5.1.1",
+    "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-security": "1.4.0",
-    "markdownlint-cli": "0.30.0",
+    "markdownlint-cli": "0.31.0",
     "prettier": "2.4.1",
     "ts-node": "10.4.0",
     "typescript": "4.5.2"
@@ -76,7 +76,7 @@
   "main": "index.js",
   "name": "@encoura/eslint-config",
   "peerDependencies": {
-    "@actinc/eslint-config": "3.4.0",
+    "@actinc/eslint-config": "3.4.1",
     "@commitlint/cli": "15.0.0",
     "@commitlint/config-conventional": "15.0.0",
     "@typescript-eslint/eslint-plugin": "5.4.0",
@@ -96,11 +96,11 @@
     "eslint-plugin-new-with-error": "3.1.0",
     "eslint-plugin-no-loops": "0.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-promise": "5.1.1",
+    "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-security": "1.4.0",
-    "markdownlint-cli": "0.30.0",
+    "markdownlint-cli": "0.31.0",
     "prettier": "2.4.1",
     "typescript": "4.5.2"
   },
@@ -123,5 +123,5 @@
     "update:version:major": "standard-version --release-as major",
     "update:version:minor": "standard-version --release-as minor"
   },
-  "version": "1.2.4"
+  "version": "1.2.5"
 }
