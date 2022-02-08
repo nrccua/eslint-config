@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.5](https://github.com/nrccus/eslint-config/compare/1.2.4...1.2.5) (2022-02-08)
+
+
+### Changes
+
+* [E4E-0]: Update dependencies to resolve audit issues ([6102393](https://github.com/nrccus/eslint-config/commit/610239354dccf786c9dfdcdcce123b3993d40a9a))
+* Merge pull request #23 from nrccua/feature/printWidth_by_file_type ([861add4](https://github.com/nrccus/eslint-config/commit/861add4cdd1c29451cfa938b51725b0fc7a736a2)), closes [#23](https://github.com/nrccus/eslint-config/issues/23)
+* [E4E-0]: 1.2.4 ([a0dfc4c](https://github.com/nrccus/eslint-config/commit/a0dfc4c610effae66435fb12180e32b2da0106b6))
+* Merge pull request #22 from nrccua/feature/printWidth_by_file_type ([79d64a7](https://github.com/nrccus/eslint-config/commit/79d64a734c27ba8c2e1db6b2c387011f7ccf6f0f)), closes [#22](https://github.com/nrccus/eslint-config/issues/22)
+* Merge pull request #21 from nrccua/feature/printWidth_by_file_type ([a0f8a7f](https://github.com/nrccus/eslint-config/commit/a0f8a7f33988909262f99b6103cc71d0ae4cd46f)), closes [#21](https://github.com/nrccus/eslint-config/issues/21)
+* Merge pull request #20 from nrccua/feature/printWidth_by_file_type ([88ca560](https://github.com/nrccus/eslint-config/commit/88ca56048cd729664bcb423f2f5d251108b99315)), closes [#20](https://github.com/nrccus/eslint-config/issues/20)
+
 ### [1.2.4](https://github.com/nrccus/eslint-config/compare/1.2.3...1.2.4) (2021-12-18)
 
 
