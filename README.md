@@ -46,13 +46,10 @@ The commit message may also be in the form of git's standard merge commit format
 ## Configure ESLint
 
 To configure [ESLint](https://eslint.org/), add the following to your
-`package.json` file. This will allow ESLint to discover the configuration this
-repository provides from within your `node_modules` folder, and will check
-your `*.js`, `*.ts`, and `*.tsx` files for infractions every time you create a
-new commit:
-
-To configure [prettier](https://prettier.io/), create a `.prettierrc.js`
-file in the root of your project that contains the following:
+`.eslintrc.js` and `package.json` files. This will allow ESLint to discover the
+configuration this repository provides from within your `node_modules` folder,
+and will check your `*.js`, `*.ts`, and `*.tsx` files for infractions every
+time you create a new commit:
 
 ```js
 module.exports = {
