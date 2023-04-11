@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const prettierConfig = require('./.prettierrc');
+const prettierConfig = require('./.prettierrc'
 
 const overridePrintWidth =
   prettierConfig && prettierConfig.overrides && prettierConfig.overrides.length > 0
