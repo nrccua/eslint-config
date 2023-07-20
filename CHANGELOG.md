@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.3.1](https://github.com/nrccus/eslint-config/compare/1.2.5...1.3.1) (2023-07-20)
+### [1.3.2](https://github.com/nrccus/eslint-config/compare/1.2.5...1.3.2) (2023-07-20)
 
 
 ### Changes
 
+* [DA-3]: Remove unused rule; replace with TS compiler option ([5f6e783](https://github.com/nrccus/eslint-config/commit/5f6e7837d3f58d6a1087eb6813b6de6ec8df7b62))
+* [DA-3]: Fix bad version # in changelog ([00d9227](https://github.com/nrccus/eslint-config/commit/00d9227dac0fb8a8755ab9b4645c7226925d3cca))
+* [DA-3]: Update Chnagelog ([4cffd16](https://github.com/nrccus/eslint-config/commit/4cffd16ca9226cc94120b361522e9d9b0f480049))
 * [DA-3]: Remove tsc tests + add json to prettier ([34bb52b](https://github.com/nrccus/eslint-config/commit/34bb52bc0cb32b1e4a47664a7e283ffedb0cb100))
 * Merge remote-tracking branch 'origin/main' into updatedependencies_202307 ([888ea04](https://github.com/nrccus/eslint-config/commit/888ea04756d791b32c8148670b560ca530a7ac19))
 * [DA-3]: Update node version in GitHub action ([a7165c5](https://github.com/nrccus/eslint-config/commit/a7165c5d24a095445dda1f7800619a449323d328))
