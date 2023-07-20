@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/nrccus/eslint-config/compare/1.2.5...1.3.2) (2023-07-20)
+
+
+### Changes
+
+* [DA-3]: Remove unused rule; replace with TS compiler option ([5f6e783](https://github.com/nrccus/eslint-config/commit/5f6e7837d3f58d6a1087eb6813b6de6ec8df7b62))
+* [DA-3]: Fix bad version # in changelog ([00d9227](https://github.com/nrccus/eslint-config/commit/00d9227dac0fb8a8755ab9b4645c7226925d3cca))
+* [DA-3]: Update Chnagelog ([4cffd16](https://github.com/nrccus/eslint-config/commit/4cffd16ca9226cc94120b361522e9d9b0f480049))
+* [DA-3]: Remove tsc tests + add json to prettier ([34bb52b](https://github.com/nrccus/eslint-config/commit/34bb52bc0cb32b1e4a47664a7e283ffedb0cb100))
+* Merge remote-tracking branch 'origin/main' into updatedependencies_202307 ([888ea04](https://github.com/nrccus/eslint-config/commit/888ea04756d791b32c8148670b560ca530a7ac19))
+* [DA-3]: Update node version in GitHub action ([a7165c5](https://github.com/nrccus/eslint-config/commit/a7165c5d24a095445dda1f7800619a449323d328))
+* Merge pull request #26 from nrccua/feature/package-refresh ([5c6157d](https://github.com/nrccus/eslint-config/commit/5c6157d757b52b7f265bc5d5d88c1ac64d54f855)), closes [#26](https://github.com/nrccus/eslint-config/issues/26)
+* [DA-3]: Update version to 1.3.0 ([7505d03](https://github.com/nrccus/eslint-config/commit/7505d0340e7412e01a51f376d2cac09a51955a14))
+* [DA-3]: Update to Node 16 + all dependencies ([c18cf5b](https://github.com/nrccus/eslint-config/commit/c18cf5bd0397940f79171c5fa2fa937fc2fe583c))
+* Merge pull request #25 from nrccua/joncursi-patch-1 ([06a6c13](https://github.com/nrccus/eslint-config/commit/06a6c13a83c9dc5fb4819ebc3b59b8110e9eadd2)), closes [#25](https://github.com/nrccus/eslint-config/issues/25)
+* Update README.md ([f3029ba](https://github.com/nrccus/eslint-config/commit/f3029baf8ba0b140303d35b4b19edffaa758a4f1))
+* Merge pull request #24 from nrccua/update/dependencies_202202 ([3ff4c35](https://github.com/nrccus/eslint-config/commit/3ff4c35342e1be6a6b91141f1fdd38f0174fa08e)), closes [#24](https://github.com/nrccus/eslint-config/issues/24)
+* [E4E-0]: 1.2.5 ([eb0e6a3](https://github.com/nrccus/eslint-config/commit/eb0e6a3946bb6c990514af2235573eb5402627f7))
+
 ### [1.2.5](https://github.com/nrccus/eslint-config/compare/1.2.4...1.2.5) (2022-02-08)
 
 

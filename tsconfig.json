@@ -5,7 +5,8 @@
   "ts-node": {
     "transpileOnly": false,
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "commonjs",
+      "useUnknownInCatchVariables": true
     }
   }
 }
