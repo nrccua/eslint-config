@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/nrccus/eslint-config/compare/1.2.5...1.3.0) (2023-07-20)
+
+
+### Changes
+
+* [DA-3]: Update to Node 16 + all dependencies ([c18cf5b](https://github.com/nrccus/eslint-config/commit/c18cf5bd0397940f79171c5fa2fa937fc2fe583c))
+* Merge pull request #25 from nrccua/joncursi-patch-1 ([06a6c13](https://github.com/nrccus/eslint-config/commit/06a6c13a83c9dc5fb4819ebc3b59b8110e9eadd2)), closes [#25](https://github.com/nrccus/eslint-config/issues/25)
+* Update README.md ([f3029ba](https://github.com/nrccus/eslint-config/commit/f3029baf8ba0b140303d35b4b19edffaa758a4f1))
+* Merge pull request #24 from nrccua/update/dependencies_202202 ([3ff4c35](https://github.com/nrccus/eslint-config/commit/3ff4c35342e1be6a6b91141f1fdd38f0174fa08e)), closes [#24](https://github.com/nrccus/eslint-config/issues/24)
+* [E4E-0]: 1.2.5 ([eb0e6a3](https://github.com/nrccus/eslint-config/commit/eb0e6a3946bb6c990514af2235573eb5402627f7))
+
 ### [1.2.5](https://github.com/nrccus/eslint-config/compare/1.2.4...1.2.5) (2022-02-08)
 
 
