@@ -29,6 +29,7 @@ const baseConfig = {
   ],
   ignorePatterns: ['node_modules/**'],
   plugins: ['prettier'],
+  root: true,
   rules: {
     'filenames/match-exported': ['warn', [null, 'pascal', 'camel']],
     'import/extensions': ['error', 'never'],
