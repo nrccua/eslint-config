@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/nrccus/eslint-config/compare/1.3.2...1.4.0) (2023-09-15)
+
+
+### Changes
+
+* Update downstream packages ([1106598](https://github.com/nrccus/eslint-config/commit/1106598811f590c59fd8433183b647c57069e675))
+* Merge pull request #27 from nrccua/updatedependencies_202307 ([3d50967](https://github.com/nrccus/eslint-config/commit/3d509673d74260d72a72446651a9a6f3518f44af)), closes [#27](https://github.com/nrccus/eslint-config/issues/27)
+* [DA-3]: 1.3.2 ([82c1ee5](https://github.com/nrccus/eslint-config/commit/82c1ee568283c81c0e35823059fe510e20aaa761))
+
 ### [1.3.2](https://github.com/nrccus/eslint-config/compare/1.2.5...1.3.2) (2023-07-20)
 
 
