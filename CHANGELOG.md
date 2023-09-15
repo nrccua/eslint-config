@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/nrccus/eslint-config/compare/1.4.0...1.4.1) (2023-09-15)
+
+
+### Changes
+
+* Make publish run on published instead of created ([d7b5903](https://github.com/nrccus/eslint-config/commit/d7b59036cd5987c47783c8b61dcb300635bdda00))
+* Update version to 1.4.0; make this an npm package ([eba98da](https://github.com/nrccus/eslint-config/commit/eba98daa48bf1225f6e50165800b5a5c2d67320f))
+
 ## [1.4.0](https://github.com/nrccus/eslint-config/compare/1.3.2...1.4.0) (2023-09-15)
 
 
