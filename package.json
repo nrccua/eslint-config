@@ -80,7 +80,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/nrccus/eslint-config.git"
+    "url": "https://github.com/nrccua/eslint-config.git"
   },
   "scripts": {
     "audit": "npm shrinkwrap && npm audit; rm -rf npm-shrinkwrap.json",
@@ -95,5 +95,5 @@
     "update:version:major": "standard-version --release-as major",
     "update:version:minor": "standard-version --release-as minor"
   },
-  "version": "1.4.4"
+  "version": "1.5.0"
 }

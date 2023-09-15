@@ -9,7 +9,7 @@ Install this package, [husky](https://github.com/typicode/husky), and
 [lint-staged](https://github.com/okonet/lint-staged) as dev dependencies:
 
 ```shell
-npm install --save-dev git+https://github.com/nrccua/eslint-config.git husky lint-staged
+npm install --save-dev @encoura/eslint-config husky lint-staged
 ```
 
 Configure husky by adding the following to your `package.json` file:
