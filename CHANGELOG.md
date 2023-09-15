@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/nrccus/eslint-config/compare/1.4.1...1.4.2) (2023-09-15)
+
+
+### Changes
+
+* Publish at the same node version we're testing against ([4fcb287](https://github.com/nrccus/eslint-config/commit/4fcb287766266b68690ae7b5ea292948c3c6fd2d))
+* Update to 1.4.1 ([08e4d29](https://github.com/nrccus/eslint-config/commit/08e4d29d983c446a15f22b984e7cc4dd04dabdea))
+
 ### [1.4.1](https://github.com/nrccus/eslint-config/compare/1.4.0...1.4.1) (2023-09-15)
 
 
