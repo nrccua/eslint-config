@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.4](https://github.com/nrccus/eslint-config/compare/1.4.3...1.4.4) (2023-09-15)
+
+
+### Changes
+
+* Try to update how the token is passed to npm publish ([781eb9e](https://github.com/nrccus/eslint-config/commit/781eb9e6bcffbbb07b158cbc0fed8cda832f3a0a))
+* 1.4.3 ([c20a2b7](https://github.com/nrccus/eslint-config/commit/c20a2b78762d596752587ddd5c16e08b50d9bc44))
+
 ### [1.4.3](https://github.com/nrccus/eslint-config/compare/1.4.2...1.4.3) (2023-09-15)
 
 
