@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/nrccua/eslint-config/compare/1.4.4...1.5.0) (2023-09-15)
+
+
+### Changes
+
+* Fix the github url + update readme instructions ([12088cc](https://github.com/nrccua/eslint-config/commit/12088cc9182a33a670d3af459c13c4f06b1c80bc))
+* 1.4.4 ([d8db4bb](https://github.com/nrccua/eslint-config/commit/d8db4bb8d2d1fbee0a580c85136dc00fb705ce17))
+
 ### [1.4.4](https://github.com/nrccua/eslint-config/compare/1.4.3...1.4.4) (2023-09-15)
 
 
