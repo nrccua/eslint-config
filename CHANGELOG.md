@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/nrccua/eslint-config/compare/v2.3.0...v2.4.0) (2024-09-26)
+
+
+### Features
+
+* Remove deprecated max-len rule, as it is conflicting with prettier anyway ([ff798fb](https://github.com/nrccua/eslint-config/commit/ff798fb8c7c83d2d117b28fe3e2d5083a4e93ef8))
+
 # [2.3.0](https://github.com/nrccua/eslint-config/compare/v2.2.0...v2.3.0) (2024-09-26)
 
 
