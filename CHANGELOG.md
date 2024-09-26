@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/nrccua/eslint-config/compare/v2.2.0...v2.3.0) (2024-09-26)
+
+
+### Features
+
+* Added support for eslint-plugin-regex ([ab6c5a7](https://github.com/nrccua/eslint-config/commit/ab6c5a787da9d0faf589d97fbaeec294bcc693cb))
+
 # [2.2.0](https://github.com/nrccua/eslint-config/compare/v2.1.1...v2.2.0) (2024-09-26)
 
 
