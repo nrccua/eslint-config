@@ -32,7 +32,7 @@
     "markdownlint-cli": "^0.42.0",
     "prettier": "^3.3.3"
   },
-  "description": "ACT's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
+  "description": "Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "6.0.3",

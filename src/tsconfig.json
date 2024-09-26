@@ -26,5 +26,12 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext"
+  },
+  "ts-node": {
+    "transpileOnly": false,
+    "compilerOptions": {
+      "module": "commonjs",
+      "useUnknownInCatchVariables": true
+    }
   }
 }
