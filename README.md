@@ -1,6 +1,12 @@
 # ESLint Config
 
-Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and
+<!-- markdownlint-disable line-length -->
+
+[![Version](https://img.shields.io/npm/v/@encoura/eslint-config)](https://www.npmjs.com/package/@encoura/eslint-config) [![Build Status](https://app.travis-ci.com/nrrccua/eslint-config.svg?branch=master)](https://app.travis-ci.com/nrrccua/eslint-config) [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/nrrccua/eslint-config/blob/master/LICENSE) [![Downloads](https://img.shields.io/npm/dw/@encoura/eslint-config?color=orange)](https://www.npmjs.com/package/@encoura/eslint-config)
+
+<!-- markdownlint-enable line-length -->
+
+ACT's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and
 MarkdownLint.
 
 ## Getting Started
@@ -16,10 +22,10 @@ Configure husky by adding the following to your `package.json` file:
 
 ```json
 ...
-"scripts": {
-  ...
-  "prepare": "husky install",
-  ...
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
 },
 ...
 ```
@@ -37,29 +43,41 @@ module.exports = require('@encoura/eslint-config/commitlint.config');
 This will allow CommitLint to discover the configuration this repository
 provides from within your `node_modules` folder.
 
-By default the Encoura commitlint expects a commit message in the following format:
+Next, add the following to your `package.json` file so that CommitLint will
+check for infractions in your commit messages every time you create a new
+commit:
 
-`[XXX-###]: Subject` where XXX-### is a jira ticket id, e.g., `E4E-1`
-
-The commit message may also be in the form of git's standard merge commit format.
+```json
+...
+"husky": {
+  "hooks": {
+    ...
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    ...
+  }
+},
+...
+```
 
 ## Configure ESLint
 
 To configure [ESLint](https://eslint.org/), add the following to your
-`.eslintrc.js` and `package.json` files. This will allow ESLint to discover the
-configuration this repository provides from within your `node_modules` folder,
-and will check your `*.js`, `*.ts`, and `*.tsx` files for infractions every
-time you create a new commit:
-
-```js
-module.exports = {
-  extends: ['@encoura/eslint-config']
-  ...
-  // Add any custom rules/plugins/configuration here
-}
-```
+`package.json` file. This will allow ESLint to discover the configuration this
+repository provides from within your `node_modules` folder, and will check
+your `*.js`, `*.ts`, and `*.tsx` files for infractions every time you create a
+new commit:
 
 ```json
+...
+"eslintConfig": {
+  ...
+  "extends": [
+    ...
+    "@encoura/eslint-config",
+    ...
+  ],
+  ...
+},
 ...
 "lint-staged": {
   ...
@@ -89,11 +107,11 @@ a new commit:
 
 ## Configure Prettier
 
-To configure [prettier](https://prettier.io/), create a `.prettierrc.js`
+To configure [prettier](https://prettier.io/), create a `prettier.config.js`
 file in the root of your project that contains the following:
 
 ```js
-module.exports = require('@encoura/eslint-config/.prettierrc');
+module.exports = require('@encoura/eslint-config/prettier.config');
 ```
 
 This will allow Prettier to discover the configuration this repository
@@ -115,23 +133,6 @@ your files for infractions every time you create a new commit:
 ...
 ```
 
-## Configure Jest
-
-To configure [Jest](https://jestjs.io/), create a `jest.config.js`
-file in the root of your project that contains the following:
-
-```js
-const defaultConfig = require('@encoura/eslint-config/jest.config');
-
-module.export = {
-  ...defaultConfig,
-  // Extra project specific jest config here...
-} 
-```
-
-This will allow Jest to discover the configuration this repository
-provides from within your `node_modules` folder.
-
 ## Configure TypeScript
 
 To configure [TypeScript](https://www.typescriptlang.org/), add the following
@@ -151,7 +152,32 @@ configuration this repository provides from within your `node_modules` folder:
 There are several npm scripts at your disposal during local development.
 Here are some of the more important ones:
 
-| Script                  | Description                                                           |
-|:----------------------- |:--------------------------------------------------------------------- |
-| npm test                | Run all tests.                                                        |
-| npm run release         | Publish a new release of the ESLint Config.                           |
+| Script   | Description    |
+| :------- | :------------- |
+| npm test | Run all tests. |
+
+### Release Process
+
+Upon merge, [`semantic-release`](https://github.com/semantic-release/semantic-release)
+will scan the `main` branch for new commits and will use those commits to choose
+a new version for this library and write automated changelog documentation. Thus,
+it is important that we accurately capture what type of development we are
+doing via our commit messages.
+
+- For changes to documentation, use the `docs` tag:
+
+```bash
+git commit -m "docs: Updated documentation to clarify XYZ"
+```
+
+- For patches, use `fix`:
+
+```bash
+git commit -m "fix: Updated an eslint rule to fix false positives in downstream projects"
+```
+
+- For new functionality, use `feat`:
+
+```bash
+git commit -m "feat: Added new eslint rules around async/await and promises"
+```

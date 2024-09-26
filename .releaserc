@@ -1,0 +1,44 @@
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changeLogTitle": "# Changelog"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm version ${nextRelease.version} --no-commit-hooks --no-git-tag-version"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "./dist"
+      }
+    ],
+    "@semantic-release/github",
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "package.json",
+          "package-lock.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ],
+  "repositoryUrl": "git@github.com:nrrccua/eslint-config.git",
+  "branches": [
+    {
+      "name": "main",
+      "prerelease": false
+    }
+  ]
+}
