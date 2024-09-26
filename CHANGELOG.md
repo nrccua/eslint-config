@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/nrccua/eslint-config/compare/v2.1.0...v2.1.1) (2024-09-26)
+
+
+### Bug Fixes
+
+* Open up semver ranges ([dd3edf1](https://github.com/nrccua/eslint-config/commit/dd3edf104f8d76b946e6417017bf4d3570c4ca1e))
+
 # [2.1.0](https://github.com/nrccua/eslint-config/compare/v2.0.0...v2.1.0) (2024-09-26)
 
 
