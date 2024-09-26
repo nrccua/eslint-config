@@ -98,7 +98,7 @@ To configure [prettier](https://prettier.io/), create a `.prettierrc.js`
 file in the root of your project that contains the following:
 
 ```js
-module.exports = require('@encoura/eslint-config/.prettierrc');
+module.exports = require('@encoura/eslint-config/prettier.config');
 ```
 
 This will allow Prettier to discover the configuration this repository
