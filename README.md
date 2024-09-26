@@ -145,26 +145,42 @@ Here are some of the more important ones:
 
 ### Release Process
 
-Upon merge, [`semantic-release`](https://github.com/semantic-release/semantic-release)
-will scan the `main` branch for new commits and will use those commits to choose
-a new version for this library and write automated changelog documentation. Thus,
-it is important that we accurately capture what type of development we are
-doing via our commit messages.
+When your code changes are ready, it's time to publish a new patch, minor, or
+major release.
 
-- For changes to documentation, use the `docs` tag:
+1. Make a PR (or mark your draft PR as ready for review).
 
-```bash
-git commit -m "docs: Updated documentation to clarify XYZ"
-```
+2. Annotate your PR with the necessary context to let Semantic Release know if
+   this should yield a new patch, minor, or major release:
 
-- For patches, use `fix`:
+   - If you expect the merging of your PR to result in a new _patch_ release,
+     start your PR title with `fix:`.
 
-```bash
-git commit -m "fix: Updated an eslint rule to fix false positives in downstream projects"
-```
+   - If you expect the merging of your PR to result in a new _minor_ release,
+     start your PR title with `feat:`.
 
-- For new functionality, use `feat`:
+   - If you expect the merging of your PR to result in a new _major_ release,
+     see #3 below for details.
 
-```bash
-git commit -m "feat: Added new eslint rules around async/await and promises"
-```
+   - If you expect the merging of your PR to skip the creation of a new release,
+     you can start your PR title with `build:` (for build changes),
+     `chore:` (for basic maintenance), `docs:` (for documentation updates),
+     or simply do not use any of the above keyword prefixes.
+
+3. If the pull request should create a new major version release, the string
+   `BREAKING CHANGE:` must be included in at least one commit message's
+   **footer** ([see docs](https://semantic-release.gitbook.io/semantic-release#commit-message-format))
+   — Semantic Release's commit analyzer does **not** use the PR title in
+   determining major releases.
+
+   You can either manually add `BREAKING CHANGE:` to the commit footer
+   after pressing "Merge Pull Request"/"Squash and Merge" in your PR (in the
+   "optional extended description" field). Alternatively, if you're merging the
+   PR by creating a new merge commit, ensure that at least one of the source
+   commits' messages has `BREAKING CHANGE:` in its footer. Note that to
+   accomplish this you may need to commit with the `--no-verify` flag to bypass
+   commitlint.
+
+4. Once your PR is merged, Semantic Release will pick it up and initiate the
+   automated release process. If it detects that it should create a release
+   (based on the above), it will. Otherwise, it won't!
