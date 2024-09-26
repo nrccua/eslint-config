@@ -5,7 +5,7 @@ import { JestConfigWithTsJest } from 'ts-jest';
 const config: JestConfigWithTsJest = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   preset: 'ts-jest',
-  roots: ['<rootDir>/test'],
+  roots: ['<rootDir>/examples'],
   setupFilesAfterEnv: ['./jest.setup.ts'],
   testEnvironment: 'jsdom',
   transform: {
