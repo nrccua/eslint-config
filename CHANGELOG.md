@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/nrccua/eslint-config/compare/v2.1.1...v2.2.0) (2024-09-26)
+
+
+### Features
+
+* Added support for next.js rules, storybook rules, mdx rules, sort-keys-fix ([033a67f](https://github.com/nrccua/eslint-config/commit/033a67f67bff0fb4f8b303f58984886a542c0be3))
+
 ## [2.1.1](https://github.com/nrccua/eslint-config/compare/v2.1.0...v2.1.1) (2024-09-26)
 
 

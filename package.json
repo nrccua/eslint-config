@@ -105,5 +105,5 @@
     "test:tsconfig": "tsc --noEmit",
     "test:unit": "jest --maxWorkers=2 --silent"
   },
-  "version": "2.1.1"
+  "version": "2.2.0"
 }
