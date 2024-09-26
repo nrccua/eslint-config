@@ -20,13 +20,16 @@ const baseConfig = {
   },
   extends: [
     'airbnb',
+    'plugin:@next/next/recommended',
     'plugin:import/errors',
     'plugin:import/recommended',
     'plugin:import/warnings',
     'plugin:jsx-a11y/recommended',
     'plugin:lodash/recommended',
+    'plugin:mdx/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
+    'plugin:storybook/recommended',
     'prettier',
   ],
   ignorePatterns: ['node_modules/**'],
@@ -43,14 +46,17 @@ const baseConfig = {
     'react',
     'react-hooks',
     'security',
+    'sort-keys-fix',
   ],
   root: true,
   rules: {
+    '@next/next/no-html-link-for-pages': ['warn', './src'],
+    '@next/next/no-img-element': 'off',
     'comma-dangle': ['error', 'only-multiline'],
     'filenames/match-exported': ['warn', [null, 'pascal', 'camel']],
     'filenames/match-regex': 'off',
     'function-paren-newline': 'off',
-    'import/extensions': ['error', 'never'],
+    'import/extensions': ['error', 'never', { json: 'always', svg: 'always' }],
     'import/named': 'error',
     'import/namespace': [
       'error',
@@ -115,7 +121,7 @@ const baseConfig = {
     'promise/prefer-await-to-then': 'warn',
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
-    'react/boolean-prop-naming': 'error',
+    'react/boolean-prop-naming': 'warn',
     'react/destructuring-assignment': ['error', 'always'],
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
@@ -145,6 +151,7 @@ const baseConfig = {
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': 'error',
     'react/react-in-jsx-scope': 'error',
+    'react/require-default-props': 'off',
     'react/require-render-return': 'error',
     'react/sort-comp': [
       'error',
@@ -192,6 +199,13 @@ const baseConfig = {
         caseSensitive: false,
       },
     ],
+    'sort-keys-fix/sort-keys-fix': [
+      'error',
+      'asc',
+      {
+        caseSensitive: false,
+      },
+    ],
   },
   settings: {
     'import/resolver': {
@@ -200,6 +214,9 @@ const baseConfig = {
       },
       typescript: {},
     },
+    'mdx/code-blocks': true,
+    'mdx/language-mapper': {},
+    next: {},
   },
 };
 
@@ -289,7 +306,15 @@ const testConfig = {
   },
 };
 
+const storybookConfig = {
+  files: ['./**/*.stories.tsx'],
+  rules: {
+    'react-hooks/rules-of-hooks': 'off',
+    'storybook/story-exports': 'off',
+  },
+};
+
 module.exports = {
   ...baseConfig,
-  overrides: [typescriptConfig, testConfig],
+  overrides: [typescriptConfig, testConfig, storybookConfig],
 };
