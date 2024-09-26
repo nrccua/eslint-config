@@ -1,3 +1,16 @@
+# 1.0.0 (2024-09-26)
+
+
+### Bug Fixes
+
+* Fix path to git repository ([#41](https://github.com/nrccua/eslint-config/issues/41)) ([894db24](https://github.com/nrccua/eslint-config/commit/894db24e9f72038034699e82dd7326146fccb476))
+* Remove peer deps specifications, since all of those packages are already housed in deps ([c20e260](https://github.com/nrccua/eslint-config/commit/c20e260d9b0306df95eb5d369462217b538e8848))
+
+
+### Features
+
+* Updated library versions; Added examples for dog-fooding; Automated release process; Node 22 upgrade ([#35](https://github.com/nrccua/eslint-config/issues/35)) ([19d7424](https://github.com/nrccua/eslint-config/commit/19d74248bca73b019fe2f15f2f2b15bcf53ef07e))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
