@@ -45,6 +45,7 @@ const baseConfig = {
     'promise',
     'react',
     'react-hooks',
+    'regex',
     'security',
     'sort-keys-fix',
   ],
