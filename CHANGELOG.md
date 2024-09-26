@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/nrccua/eslint-config/compare/v2.0.0...v2.1.0) (2024-09-26)
+
+
+### Features
+
+* Added eslint-import-resolver-node and eslint-import-resolver-typescript to the core setup ([aae9898](https://github.com/nrccua/eslint-config/commit/aae98982cda9172bca787d3f2102bf8f6830ccb5))
+
 # [2.0.0](https://github.com/nrccua/eslint-config/compare/v1.0.0...v2.0.0) (2024-09-26)
 
 
