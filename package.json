@@ -99,5 +99,5 @@
     "test:tsconfig": "tsc --noEmit",
     "test:unit": "jest --maxWorkers=2 --silent"
   },
-  "version": "4.10.0"
+  "version": "1.5.0"
 }
