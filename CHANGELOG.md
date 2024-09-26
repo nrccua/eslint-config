@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/nrccua/eslint-config/compare/v1.0.0...v2.0.0) (2024-09-26)
+
+
+### Documentation
+
+* Remove spaces ([99593da](https://github.com/nrccua/eslint-config/commit/99593da918ec939cfcc2b3b8f460704ce559b776))
+
+
+### BREAKING CHANGES
+
+* Publish as 2.0.0 due to Nestjs config file renaming
+
 # 1.0.0 (2024-09-26)
 
 
