@@ -13,7 +13,7 @@ const overridePrintWidth =
     : 0;
 const printWidth = Math.max(prettierConfig.printWidth, overridePrintWidth);
 
-const javascriptConfig = {
+const baseConfig = {
   env: {
     browser: true,
     es6: true,
@@ -193,11 +193,19 @@ const javascriptConfig = {
       },
     ],
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      typescript: {},
+    },
+  },
 };
 
 const typescriptConfig = {
   extends: [
-    ...javascriptConfig.extends,
+    ...baseConfig.extends,
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/typescript',
@@ -209,7 +217,7 @@ const typescriptConfig = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    ...javascriptConfig.rules,
+    ...baseConfig.rules,
     '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -282,6 +290,6 @@ const testConfig = {
 };
 
 module.exports = {
-  ...javascriptConfig,
+  ...baseConfig,
   overrides: [typescriptConfig, testConfig],
 };
