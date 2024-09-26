@@ -155,13 +155,10 @@ major release.
 
    - If you expect the merging of your PR to result in a new _patch_ release,
      start your PR title with `fix:`.
-
    - If you expect the merging of your PR to result in a new _minor_ release,
      start your PR title with `feat:`.
-
    - If you expect the merging of your PR to result in a new _major_ release,
      see #3 below for details.
-
    - If you expect the merging of your PR to skip the creation of a new release,
      you can start your PR title with `build:` (for build changes),
      `chore:` (for basic maintenance), `docs:` (for documentation updates),
