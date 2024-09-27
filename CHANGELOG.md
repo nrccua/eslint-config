@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/nrccua/eslint-config/compare/v2.4.0...v2.5.0) (2024-09-27)
+
+
+### Features
+
+* Bump eslint-plugin-promise from 6.6.0 to 7.1.0 ([#40](https://github.com/nrccua/eslint-config/issues/40)) ([7be1832](https://github.com/nrccua/eslint-config/commit/7be18321ff791e7d55c34336a44300a3f5a98106))
+
 # [2.4.0](https://github.com/nrccua/eslint-config/compare/v2.3.0...v2.4.0) (2024-09-26)
 
 
