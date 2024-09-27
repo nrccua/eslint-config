@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/nrccua/eslint-config/compare/v2.6.0...v2.6.1) (2024-09-27)
+
+
+### Reverts
+
+* Revert "Bump eslint-config-prettier from 8.10.0 to 9.1.0" ([#43](https://github.com/nrccua/eslint-config/issues/43)) ([08b235b](https://github.com/nrccua/eslint-config/commit/08b235b85bfb646b9478038ab309bfe70b9e126d)), closes [#37](https://github.com/nrccua/eslint-config/issues/37)
+
 # [2.6.0](https://github.com/nrccua/eslint-config/compare/v2.5.0...v2.6.0) (2024-09-27)
 
 
