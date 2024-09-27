@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/nrccua/eslint-config/compare/v2.7.0...v2.8.0) (2024-09-27)
+
+
+### Features
+
+* Bumps eslint-plugin-react to ^7.37.0 ([f05e350](https://github.com/nrccua/eslint-config/commit/f05e35097997eab169b2604ae87fd7a6d776b125))
+
 # [2.7.0](https://github.com/nrccua/eslint-config/compare/v2.6.1...v2.7.0) (2024-09-27)
 
 
