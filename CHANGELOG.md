@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/nrccua/eslint-config/compare/v2.5.0...v2.6.0) (2024-09-27)
+
+
+### Features
+
+* Bump eslint-plugin-security from 1.7.1 to 3.0.1 ([#39](https://github.com/nrccua/eslint-config/issues/39)) ([436c612](https://github.com/nrccua/eslint-config/commit/436c61283c7115b4b8040b5be3da4caeb3961005))
+
 # [2.5.0](https://github.com/nrccua/eslint-config/compare/v2.4.0...v2.5.0) (2024-09-27)
 
 
