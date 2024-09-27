@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/nrccua/eslint-config/compare/v2.6.1...v2.7.0) (2024-09-27)
+
+
+### Features
+
+* Bump eslint-config-prettier from 8.10.0 to 9.1.0 ([2e1fd6a](https://github.com/nrccua/eslint-config/commit/2e1fd6a0be26b389c49c2065be092392bb5f5c75))
+
 ## [2.6.1](https://github.com/nrccua/eslint-config/compare/v2.6.0...v2.6.1) (2024-09-27)
 
 
