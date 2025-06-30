@@ -152,7 +152,6 @@ major release.
 
 2. Annotate your PR with the necessary context to let Semantic Release know if
    this should yield a new patch, minor, or major release:
-
    - If you expect the merging of your PR to result in a new _patch_ release,
      start your PR title with `fix:`.
    - If you expect the merging of your PR to result in a new _minor_ release,
