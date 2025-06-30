@@ -219,14 +219,15 @@ const typescriptConfig = {
   parserOptions: {
     project: ['tsconfig.json'],
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@stylistic', '@typescript-eslint', 'prettier'],
   rules: {
     ...baseConfig.rules,
+    '@stylistic/member-delimiter-style': 'error',
+    '@stylistic/type-annotation-spacing': 'error',
     '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/naming-convention': [
       'warn',
       {
@@ -243,13 +244,11 @@ const typescriptConfig = {
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-invalid-void-type': 'error',
     '@typescript-eslint/no-shadow': ['error', { ignoreTypeValueShadow: true }],
-    '@typescript-eslint/no-throw-literal': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'warn', // Change this to 'error' in the future
     '@typescript-eslint/no-unsafe-call': 'warn', // Change this to 'error' in the future
     '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/prefer-ts-expect-error': 'error',
-    '@typescript-eslint/type-annotation-spacing': 'error',
     '@typescript-eslint/unified-signatures': 'error',
     'import/order': [
       'warn',
@@ -274,7 +273,7 @@ const typescriptConfig = {
         warnOnUnassignedImports: true,
       },
     ],
-    'no-throw-literal': 'off', // Rely on @typescript-eslint/no-throw-literal instead
+    'no-throw-literal': 'error',
     'no-useless-constructor': 'off', // Rely on @typescript-eslint/no-useless-constructor instead
   },
 };
