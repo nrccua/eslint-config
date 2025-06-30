@@ -1,3 +1,28 @@
+# [3.0.0](https://github.com/nrccua/eslint-config/compare/v2.8.0...v3.0.0) (2025-06-30)
+
+
+### chore
+
+* Update packages to latest possible ([#49](https://github.com/nrccua/eslint-config/issues/49)) ([1d9b773](https://github.com/nrccua/eslint-config/commit/1d9b77340ef715745984e8af2ef0ab36820ce98a))
+
+
+### BREAKING CHANGES
+
+* * @typescript-eslint has deprecated a few rules, in favor of pushing them upstream to eslint's base rules or to the plugin @stylistic/eslint-plugin. See https://typescript-eslint.io/blog/deprecating-formatting-rules/#upgrading-to-eslint-stylistic for more information. The following rules were tweaked as a result.
+    * @typescript-eslint/member-delimiter-style -> @stylistic/eslint-plugin/member-delimiter-style
+    * @typescript-eslint/type-annotation-spacing -> `@stylistic/type-annotation-spacing'
+    ( @typescript-eslint/no-throw-literal -> no-throw-literal
+
+* feat: add examples for nest and storybook
+
+* fix: revert version number and allow semantic release to handle
+
+* fix: move peerDependencies back to dependencies
+
+* fix: move frontend deps back into dependencies
+
+* fix: remove empty peerDepencies from package.json
+
 # [2.8.0](https://github.com/nrccua/eslint-config/compare/v2.7.0...v2.8.0) (2024-09-27)
 
 
