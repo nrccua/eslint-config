@@ -89,7 +89,6 @@
     "rimraf": "^6.0.1",
     "test-exclude": "^7.0.0"
   },
-  "peerDependenciesMeta": {},
   "publishConfig": {
     "access": "public"
   },
