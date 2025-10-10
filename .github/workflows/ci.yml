@@ -1,4 +1,8 @@
 name: Continuous Integration
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
 on:
   push:
     branches:
@@ -9,10 +13,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
