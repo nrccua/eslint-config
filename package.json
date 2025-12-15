@@ -9,8 +9,8 @@
     "Adam Weeden <adam.weeden@encoura.org>"
   ],
   "dependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
     "@next/eslint-plugin-next": "^15.3.4",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
