@@ -15,7 +15,7 @@
     "@stylistic/eslint-plugin": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.39.2",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.5",
