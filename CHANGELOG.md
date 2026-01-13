@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/nrccua/eslint-config/compare/v3.0.0...v3.0.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* [EN-5298]: Changed markdownlint-lint to safer version and moved it to dev dependencies ([#65](https://github.com/nrccua/eslint-config/issues/65)) ([cdeca01](https://github.com/nrccua/eslint-config/commit/cdeca01fd0c8cf96a502eaa4ac6e846e9f51adc0))
+
 # [3.0.0](https://github.com/nrccua/eslint-config/compare/v2.8.0...v3.0.0) (2025-06-30)
 
 
