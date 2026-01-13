@@ -38,7 +38,6 @@
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-storybook": "^9.0.14",
-    "markdownlint-cli": "^0.45.0",
     "prettier": "^3.6.2"
   },
   "description": "Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
@@ -56,6 +55,7 @@
     "jest": "^30.0.3",
     "jest-environment-jsdom": "^30.0.2",
     "lint-staged": "^16.1.2",
+    "markdownlint-cli": "^0.47.0",
     "npm-run-all2": "^8.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
