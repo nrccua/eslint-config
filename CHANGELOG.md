@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/nrccua/eslint-config/compare/v3.0.1...v4.0.0) (2026-06-10)
+
+
+### Features
+
+* modernize eslint config for ESLint 10 ([#86](https://github.com/nrccua/eslint-config/issues/86)) ([8950cd0](https://github.com/nrccua/eslint-config/commit/8950cd07a8cffe58eaae9f76f611282cbef8e703))
+
+
+### BREAKING CHANGES
+
+* @encoura/eslint-config now publishes ESLint 10 flat config factories and validates on Node 24.
+
+* docs: clarify ESLint 10 breaking changes
+
 ## [3.0.1](https://github.com/nrccua/eslint-config/compare/v3.0.0...v3.0.1) (2026-01-13)
 
 
