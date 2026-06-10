@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/nrccua/eslint-config/compare/v4.0.0...v4.0.1) (2026-06-10)
+
+
+### Bug Fixes
+
+* use automation token for GitHub releases ([#87](https://github.com/nrccua/eslint-config/issues/87)) ([6480e9f](https://github.com/nrccua/eslint-config/commit/6480e9fedac2a26e43496795ff4320313c30812f))
+
 # [4.0.0](https://github.com/nrccua/eslint-config/compare/v3.0.1...v4.0.0) (2026-06-10)
 
 
