@@ -85,6 +85,26 @@ module.exports = createConfig({
 ...
 ```
 
+### Breaking Changes In v4
+
+- ESLint config consumers must use ESLint 10 flat config. Legacy `.eslintrc`
+  `extends: ['@encoura/eslint-config']` and
+  `extends: ['@encoura/eslint-config/nest']` usage is no longer supported.
+  Create an `eslint.config.js` file and call the exported config factory instead.
+- Install `eslint@^10` directly in consuming projects. This package declares
+  ESLint 10 as a peer so the project-level `eslint` CLI resolves to the expected
+  major version.
+- The published `jest.config.js` export and Jest-related dependencies were
+  removed. Projects that imported
+  `@encoura/eslint-config/jest.config` should own their Jest or Vitest config
+  locally.
+- Jest-specific test linting is no longer enabled by this shared ESLint config.
+  Test files still receive the shared TypeScript/React overrides, but Vitest
+  projects no longer inherit Jest rules.
+- `eslint-plugin-disable` is no longer bundled. The shared config did not enable
+  any `disable/*` rules; projects that used that package transitively should add
+  their own dependency.
+
 ## Configure MarkdownLint
 
 To configure [MarkdownLint](https://github.com/DavidAnson/markdownlint), add the
