@@ -5,6 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+const { fixupConfigRules } = require('@eslint/compat');
+const { FlatCompat } = require('@eslint/eslintrc');
+const js = require('@eslint/js');
+const nextPlugin = require('@next/eslint-plugin-next');
+const stylisticPlugin = require('@stylistic/eslint-plugin');
+const typescriptPlugin = require('@typescript-eslint/eslint-plugin');
+
+const compat = new FlatCompat({
+  allConfig: js.configs.all,
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+});
+
+const globalPlugins = {
+  '@stylistic': stylisticPlugin,
+  '@typescript-eslint': typescriptPlugin,
+};
+
 const baseConfig = {
   env: {
     browser: true,
@@ -12,7 +30,6 @@ const baseConfig = {
   },
   extends: [
     'airbnb',
-    'plugin:@next/next/recommended',
     'plugin:import/errors',
     'plugin:import/recommended',
     'plugin:import/warnings',
@@ -24,9 +41,14 @@ const baseConfig = {
     'plugin:storybook/recommended',
     'prettier',
   ],
-  ignorePatterns: ['node_modules/**'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2022,
+    sourceType: 'module',
+  },
   plugins: [
-    'disable',
     'filenames',
     'import',
     'jsx-a11y',
@@ -41,7 +63,6 @@ const baseConfig = {
     'security',
     'sort-keys-fix',
   ],
-  root: true,
   rules: {
     '@next/next/no-html-link-for-pages': ['warn', './src'],
     '@next/next/no-img-element': 'off',
@@ -207,100 +228,159 @@ const baseConfig = {
   },
 };
 
-const typescriptConfig = {
-  extends: [
-    ...baseConfig.extends,
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/typescript',
+const typescriptRules = {
+  '@stylistic/member-delimiter-style': 'error',
+  '@stylistic/type-annotation-spacing': 'error',
+  '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
+  '@typescript-eslint/explicit-function-return-type': 'error',
+  '@typescript-eslint/explicit-member-accessibility': 'off',
+  '@typescript-eslint/indent': 'off',
+  '@typescript-eslint/naming-convention': [
+    'warn',
+    {
+      custom: {
+        match: true,
+        regex: '^I[A-Z]',
+      },
+      format: ['PascalCase'],
+      selector: 'interface',
+    },
   ],
-  files: ['**/*.ts', '**/*.tsx'],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: ['tsconfig.json'],
-  },
-  plugins: ['@stylistic', '@typescript-eslint', 'prettier'],
-  rules: {
-    ...baseConfig.rules,
-    '@stylistic/member-delimiter-style': 'error',
-    '@stylistic/type-annotation-spacing': 'error',
-    '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
-    '@typescript-eslint/explicit-function-return-type': 'error',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/naming-convention': [
-      'warn',
-      {
-        custom: {
-          match: true,
-          regex: '^I[A-Z]',
+  '@typescript-eslint/no-base-to-string': 'off',
+  '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+  '@typescript-eslint/no-empty-object-type': 'off',
+  '@typescript-eslint/no-explicit-any': 'error',
+  '@typescript-eslint/no-extraneous-class': 'error',
+  '@typescript-eslint/no-implied-eval': 'off',
+  '@typescript-eslint/no-invalid-void-type': 'error',
+  '@typescript-eslint/no-require-imports': 'off',
+  '@typescript-eslint/no-shadow': ['error', { ignoreTypeValueShadow: true }],
+  '@typescript-eslint/no-unsafe-assignment': 'warn',
+  '@typescript-eslint/no-unsafe-call': 'warn',
+  '@typescript-eslint/no-unsafe-member-access': 'warn',
+  '@typescript-eslint/no-unsafe-unary-minus': 'off',
+  '@typescript-eslint/no-use-before-define': 'error',
+  '@typescript-eslint/no-useless-constructor': 'error',
+  '@typescript-eslint/only-throw-error': 'error',
+  '@typescript-eslint/prefer-promise-reject-errors': 'off',
+  '@typescript-eslint/prefer-ts-expect-error': 'error',
+  '@typescript-eslint/unified-signatures': 'error',
+  'import/order': [
+    'warn',
+    {
+      alphabetize: { caseInsensitive: true, order: 'asc' },
+      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+      'newlines-between': 'always',
+      pathGroups: [
+        {
+          group: 'internal',
+          pattern: '~/**',
         },
-        format: ['PascalCase'],
-        selector: 'interface',
+        {
+          group: 'external',
+          pattern: '@**',
+        },
+        {
+          group: 'external',
+          pattern: 'next/**',
+        },
+      ],
+      warnOnUnassignedImports: true,
+    },
+  ],
+  'no-throw-literal': 'off',
+  'no-useless-constructor': 'off',
+};
+
+const sanitizeCompatConfig = config => {
+  const booleanPropNaming = config.rules?.['react/boolean-prop-naming'];
+  const plugins = Object.fromEntries(Object.entries(config.plugins ?? {}).filter(([name]) => !(name in globalPlugins)));
+  const sanitizedConfig =
+    config.plugins && Object.keys(plugins).length !== Object.keys(config.plugins).length
+      ? {
+          ...config,
+          plugins,
+        }
+      : config;
+
+  if (Array.isArray(booleanPropNaming) && booleanPropNaming[1]?.message === '') {
+    const { message, ...options } = booleanPropNaming[1];
+
+    return {
+      ...sanitizedConfig,
+      rules: {
+        ...sanitizedConfig.rules,
+        'react/boolean-prop-naming': [booleanPropNaming[0], options],
       },
+    };
+  }
+
+  return sanitizedConfig;
+};
+
+const makeCompatConfig = config => fixupConfigRules(compat.config(config)).map(sanitizeCompatConfig);
+
+const makeTypescriptConfig = ({ files, project, tsconfigRootDir }) =>
+  makeCompatConfig({
+    extends: [
+      'plugin:@typescript-eslint/eslint-recommended',
+      'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      'plugin:import/typescript',
     ],
-    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-extraneous-class': 'error',
-    '@typescript-eslint/no-invalid-void-type': 'error',
-    '@typescript-eslint/no-shadow': ['error', { ignoreTypeValueShadow: true }],
-    '@typescript-eslint/no-unsafe-assignment': 'warn', // Change this to 'error' in the future
-    '@typescript-eslint/no-unsafe-call': 'warn', // Change this to 'error' in the future
-    '@typescript-eslint/no-use-before-define': 'error',
-    '@typescript-eslint/no-useless-constructor': 'error',
-    '@typescript-eslint/prefer-ts-expect-error': 'error',
-    '@typescript-eslint/unified-signatures': 'error',
-    'import/order': [
-      'warn',
-      {
-        alphabetize: { caseInsensitive: true, order: 'asc' },
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            group: 'internal',
-            pattern: '~/**',
-          },
-          {
-            group: 'external',
-            pattern: '@**',
-          },
-          {
-            group: 'external',
-            pattern: 'next/**',
-          },
-        ],
-        warnOnUnassignedImports: true,
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      project,
+      tsconfigRootDir,
+    },
+    plugins: ['@stylistic', '@typescript-eslint', 'prettier'],
+    rules: typescriptRules,
+  }).map(config => ({ ...config, files }));
+
+const createConfig = ({
+  ignores = [],
+  nextRootDir,
+  overrides = [],
+  resolverProject,
+  tsconfigRootDir = process.cwd(),
+  typescriptProjects = [{ files: ['**/*.ts', '**/*.tsx'], project: ['tsconfig.json'] }],
+} = {}) => [
+  {
+    ignores: ['dist/**', 'node_modules/**', ...ignores],
+  },
+  {
+    plugins: {
+      ...globalPlugins,
+    },
+  },
+  ...makeCompatConfig({
+    ...baseConfig,
+    settings: {
+      ...baseConfig.settings,
+      'import/resolver': {
+        ...baseConfig.settings['import/resolver'],
+        typescript: resolverProject ? { project: resolverProject } : {},
       },
-    ],
-    'no-throw-literal': 'error',
-    'no-useless-constructor': 'off', // Rely on @typescript-eslint/no-useless-constructor instead
+      next: nextRootDir ? { rootDir: nextRootDir } : {},
+    },
+  }),
+  nextPlugin.configs.recommended,
+  ...typescriptProjects.flatMap(({ files, project }) => makeTypescriptConfig({ files, project, tsconfigRootDir })),
+  {
+    files: ['test/**', '**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    rules: {
+      '@typescript-eslint/unbound-method': 'off',
+      'react/react-in-jsx-scope': 'off',
+    },
   },
-};
+  {
+    files: ['**/*.stories.tsx'],
+    rules: {
+      'react-hooks/rules-of-hooks': 'off',
+      'storybook/story-exports': 'off',
+    },
+  },
+  ...overrides,
+];
 
-const testConfig = {
-  env: {
-    'jest/globals': true,
-  },
-  extends: ['plugin:jest/recommended'],
-  files: ['test/**', '*.test.ts', '*.test.tsx', '*.spec.ts', '*.spec.tsx'],
-  plugins: ['jest'],
-  rules: {
-    '@typescript-eslint/unbound-method': 'off',
-    'jest/unbound-method': 'error',
-    'react/react-in-jsx-scope': 'off',
-  },
-};
-
-const storybookConfig = {
-  files: ['./**/*.stories.tsx'],
-  rules: {
-    'react-hooks/rules-of-hooks': 'off',
-    'storybook/story-exports': 'off',
-  },
-};
-
-module.exports = {
-  ...baseConfig,
-  overrides: [typescriptConfig, testConfig, storybookConfig],
-};
+module.exports = createConfig;
+module.exports.createConfig = createConfig;

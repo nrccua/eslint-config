@@ -5,11 +5,12 @@ MarkdownLint.
 
 ## Getting Started
 
-Install this package, [husky](https://github.com/typicode/husky), and
+Install this package, [ESLint](https://eslint.org/),
+[husky](https://github.com/typicode/husky), and
 [lint-staged](https://github.com/okonet/lint-staged) as dev dependencies:
 
 ```shell
-npm install --save-dev @encoura/eslint-config husky lint-staged
+npm install --save-dev @encoura/eslint-config eslint@^10 husky lint-staged
 ```
 
 Configure husky by adding the following to your `package.json` file:
@@ -46,22 +47,32 @@ The commit message may also be in the form of git's standard merge commit format
 ## Configure ESLint
 
 To configure [ESLint](https://eslint.org/), add the following to your
-`.eslintrc.js` and `package.json` files. This will allow ESLint to discover the
-configuration this repository provides from within your `node_modules` folder,
-and will check your `*.js`, `*.ts`, and `*.tsx` files for infractions every
-time you create a new commit:
+`eslint.config.js` and `package.json` files. This package supports ESLint 10's
+flat config system. This repository develops and validates the config on Node 24.
+
+Some legacy presets and plugins still publish stale ESLint peer ranges. This
+package keeps those presets behind ESLint's flat-compatibility shims to preserve
+existing lint behavior, so npm may print peer override warnings during install.
 
 ```js
-module.exports = {
-  extends: [
-    // For front-end (React / Next.js) projects:
-    '@encoura/eslint-config'
-    // For back-end (Nest.js) projects:
-    '@encoura/eslint-config/nest'
-  ]
-  ...
-  // Add any custom rules/plugins/configuration here
-}
+const createConfig = require('@encoura/eslint-config');
+
+module.exports = createConfig({
+  nextRootDir: __dirname,
+  resolverProject: ['tsconfig.json'],
+  tsconfigRootDir: __dirname,
+});
+```
+
+For back-end (Nest.js) projects:
+
+```js
+const createConfig = require('@encoura/eslint-config/nest');
+
+module.exports = createConfig({
+  resolverProject: ['tsconfig.json'],
+  tsconfigRootDir: __dirname,
+});
 ```
 
 ```json
