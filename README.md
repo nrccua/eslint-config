@@ -40,7 +40,7 @@ provides from within your `node_modules` folder.
 
 By default the Encoura commitlint expects a commit message in the following format:
 
-`[XXX-###]: Subject` where XXX-### is a jira ticket id, e.g., `E4E-1`
+`[XXX-###]: Subject` where XXX-### is a work item id, e.g., `WEB-1`
 
 The commit message may also be in the form of git's standard merge commit format.
 
@@ -177,12 +177,14 @@ Here are some of the more important ones:
 ### Release Process
 
 When your code changes are ready, it's time to publish a new patch, minor, or
-major release.
+major release. Maintainers typically squash pull requests when merging, so the
+PR title becomes the squash commit title and is the source of truth for patch
+and minor release detection.
 
 1. Make a PR (or mark your draft PR as ready for review).
 
-2. Annotate your PR with the necessary context to let Semantic Release know if
-   this should yield a new patch, minor, or major release:
+2. Choose a public-safe PR title that lets Semantic Release know if this should
+   yield a new patch, minor, or major release:
    - If you expect the merging of your PR to result in a new _patch_ release,
      start your PR title with `fix:`.
    - If you expect the merging of your PR to result in a new _minor_ release,
