@@ -170,9 +170,15 @@ configuration this repository provides from within your `node_modules` folder:
 There are several npm scripts at your disposal during local development.
 Here are some of the more important ones:
 
-| Script   | Description    |
-| :------- | :------------- |
-| npm test | Run all tests. |
+| Script                | Description                                              |
+| :-------------------- | :------------------------------------------------------- |
+| npm test              | Run all validation checks.                               |
+| npm run test:lint:js  | Lint JavaScript files with the shared ESLint config.     |
+| npm run test:lint:ts  | Lint TypeScript files with the shared ESLint config.     |
+| npm run test:lint:md  | Lint Markdown files with the shared MarkdownLint config. |
+| npm run test:prettier | Check formatting with Prettier.                          |
+| npm run test:tsconfig | Validate the shared TypeScript config.                   |
+| npm run test:unit     | Run unit tests for the exported config factories.        |
 
 ### Release Process
 
