@@ -136,5 +136,5 @@
     "test:package": "npm run build && node --test tests/package.cjs",
     "build:compat": "node scripts/bundle-compat.cjs"
   },
-  "version": "4.0.1"
+  "version": "4.0.2"
 }

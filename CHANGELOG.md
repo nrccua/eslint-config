@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/nrccua/eslint-config/compare/v4.0.1...v4.0.2) (2026-09-23)
+
+
+### Bug Fixes
+
+* preserve ESLint 10 plugin compatibility and resolve dependency vulnerabilities ([#108](https://github.com/nrccua/eslint-config/issues/108)) ([646e5c1](https://github.com/nrccua/eslint-config/commit/646e5c16f1b527eba4365bc33d49a02e82b36176))
+
 ## [4.0.1](https://github.com/nrccua/eslint-config/compare/v4.0.0...v4.0.1) (2026-06-10)
 
 
