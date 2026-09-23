@@ -37,9 +37,9 @@
     "eslint-plugin-regex": "^1.10.0",
     "eslint-plugin-security": "^4.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "eslint-plugin-storybook": "^10.4.3",
-    "prettier": "^3.8.4",
-    "storybook": "^10.4.3"
+    "eslint-plugin-storybook": "^10.6.0",
+    "prettier": "^3.9.8",
+    "storybook": "^10.6.0"
   },
   "description": "Encoura's preferred configs for TypeScript, Prettier, ESLint, CommitLint, and MarkdownLint.",
   "devDependencies": {
@@ -51,11 +51,11 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "clean-publish": "^5.2.2",
-    "eslint": "^10.4.1",
+    "eslint": "^10.11.0",
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "lint-staged": "^16.1.2",
-    "markdownlint-cli": "^0.47.0",
+    "markdownlint-cli": "^0.49.1",
     "npm-run-all2": "^8.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -103,7 +103,10 @@
       "eslint": "$eslint"
     },
     "rimraf": "^6.0.1",
-    "test-exclude": "^7.0.0"
+    "test-exclude": "^7.0.0",
+    "@eslint/config-array": {
+      "brace-expansion": "^5.0.12"
+    }
   },
   "peerDependencies": {
     "eslint": "^10.0.0"
@@ -118,7 +121,7 @@
   "scripts": {
     "build": "npm-run-all2 build:*",
     "build:clean": "rimraf dist && mkdir dist",
-    "build:docs": "cp -rf CHANGELOG.md LICENSE README.md dist",
+    "build:docs": "cp -rf CHANGELOG.md LICENSE README.md UPGRADE-NOTES.md dist",
     "build:package_json": "clear-package-json package.json -o dist/package.json",
     "build:src": "cp -rf src/* dist",
     "prepare": "husky",
@@ -126,10 +129,12 @@
     "test:lint:js": "eslint --quiet \"**/*.{js,jsx}\"",
     "test:lint:nest": "eslint --ext .ts --quiet -c eslint.nest.config.js 'examples/Nest'",
     "test:lint:ts": "eslint --quiet --ignore-pattern '**/Nest/*' \"**/*.{ts,tsx}\"",
-    "test:lint:md": "markdownlint README.md .github/**/*.md --config ./src/markdownlint.config.json",
+    "test:lint:md": "markdownlint README.md UPGRADE-NOTES.md .github/**/*.md --config ./src/markdownlint.config.json",
     "test:prettier": "prettier --check .",
     "test:tsconfig": "tsc --noEmit",
-    "test:unit": "vitest run --environment jsdom"
+    "test:unit": "vitest run --environment jsdom",
+    "test:package": "npm run build && node --test tests/package.cjs",
+    "build:compat": "node scripts/bundle-compat.cjs"
   },
   "version": "4.0.1"
 }
