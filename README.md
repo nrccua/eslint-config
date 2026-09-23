@@ -50,9 +50,22 @@ To configure [ESLint](https://eslint.org/), add the following to your
 `eslint.config.js` and `package.json` files. This package supports ESLint 10's
 flat config system. This repository develops and validates the config on Node 24.
 
-Some legacy presets and plugins still publish stale ESLint peer ranges. This
-package keeps those presets behind ESLint's flat-compatibility shims to preserve
-existing lint behavior, so npm may print peer override warnings during install.
+Five upstream packages still declare peer ranges that exclude ESLint 10:
+Airbnb, Airbnb Base, Import, React, and JSX accessibility. Their original
+implementations and rule names are retained. The build bundles those packages
+and their locked production dependencies into the
+published artifact. It widens only their ESLint peer metadata to include v10
+and Airbnb's React Hooks peer metadata to include v7.
+
+These are package-local compatibility patches, not upstream declarations of
+support. The existing `@eslint/compat` adapters handle legacy rule APIs.
+Consumers need no peer overrides or `--legacy-peer-deps`. Tests install the
+packed artifact with strict peers, compare complete rule inventories, and
+verify that bundled implementation files match the installed originals.
+
+Bundled dependencies are fixed by this package's lockfile. Their updates require
+a new package build and release. Use `npm ci` before release builds. Remove each
+compatibility patch when its upstream package supports these peer versions.
 
 ```js
 const createConfig = require('@encoura/eslint-config');
@@ -162,6 +175,11 @@ configuration this repository provides from within your `node_modules` folder:
 "extends": "node_modules/@encoura/eslint-config/tsconfig.json",
 ...
 ```
+
+## Dependency Upgrade Notes
+
+See [UPGRADE-NOTES.md](UPGRADE-NOTES.md) for security fixes, tooling compatibility
+changes, consumer migration steps, and validation commands.
 
 ## Local Development
 
