@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/nrccua/eslint-config/compare/v4.0.2...v4.0.3) (2026-11-03)
+
+
+### Bug Fixes
+
+* **deps:** bump multiple deps & storybook from 10.6.2 to 10.6.5 ([#121](https://github.com/nrccua/eslint-config/issues/121)) ([1e5cf0c](https://github.com/nrccua/eslint-config/commit/1e5cf0c3318a70370580aea5beafeb8b79e5b3db))
+
 ## [4.0.2](https://github.com/nrccua/eslint-config/compare/v4.0.1...v4.0.2) (2026-09-23)
 
 
